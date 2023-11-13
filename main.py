@@ -14,13 +14,14 @@ def matching():
 
 def match_products(dataframe, request_data):
     # Extrair o nome do produto da requisição
-    product_name = request_data[0].get('Camiseta básica branca')  # Assumindo que o nome do produto está na chave especificada
+    product_name = request_data.get('produto')  # Assumindo que o nome do produto está na chave 'produto'
 
+    # Verificar se o nome do produto foi fornecido na requisição
     if product_name is None:
         return [{"error": "Product name not provided in the request."}]
 
-    # Realizar o matching com base no nome do produto
-    matched_data = dataframe[dataframe.iloc[:, 0] == product_name]
+    # Realizar o matching com base no nome do produto (case insensitive)
+    matched_data = dataframe[dataframe.iloc[:, 0].str.lower() == product_name.lower()]
 
     # Verificar se há correspondências e retornar
     if not matched_data.empty:
@@ -30,8 +31,10 @@ def match_products(dataframe, request_data):
     else:
         return [{"error": "Produto não encontrado no arquivo Excel."}]
 
+# Exemplo de uso:
+# request_data = {"produto": "Nome do Produto"}
+# result = match_products(dataframe, request_data)
+# print(result)
 
-
-# Iniciar o servidor Flask
 if __name__ == '__main__':
     app.run(debug=True)
