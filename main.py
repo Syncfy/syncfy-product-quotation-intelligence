@@ -9,32 +9,35 @@ app = Flask(__name__)
 @app.route('/matching', methods=['POST'])
 def matching():
     data = request.json
-    matched_products = match_products(df, data)
+    product_name = data.get('produto')
+    user_description = data.get('descricao', '')
+
+    if product_name is None:
+        return jsonify({"error": "Product name not provided in the request."})
+
+    matched_products = match_products(df, product_name, user_description)
     return jsonify(matched_products)
 
-def match_products(dataframe, request_data):
-    # Extrair o nome do produto da requisição
-    product_name = request_data.get('produto')  # Assumindo que o nome do produto está na chave 'produto'
+def match_products(dataframe, product_name, user_description):
+    # Inicializar a lista de produtos correspondentes
+    matched_products = []
 
-    # Verificar se o nome do produto foi fornecido na requisição
-    if product_name is None:
-        return [{"error": "Product name not provided in the request."}]
+    # Iterar sobre todas as linhas do DataFrame
+    for _, row in dataframe.iterrows():
+        produto = row.iloc[0]
+        descricao = row.iloc[1] if len(row) > 1 else ""  # Verificar se há uma coluna de descrição
 
-    # Realizar o matching com base no nome do produto (case insensitive)
-    matched_data = dataframe[dataframe.iloc[:, 0].str.lower() == product_name.lower()]
+        # Verificar se o nome do produto está presente na coluna de produto
+        # e se a descrição fornecida pelo usuário está parcialmente contida na descrição do produto
+        if product_name.lower() in produto.lower() and user_description.lower() in descricao.lower():
+            matched_product = {"produto": produto, "descricao": descricao}
+            matched_products.append(matched_product)
 
-    # Verificar se há correspondências e retornar
-    if not matched_data.empty:
-        # Retornar os dados correspondentes como lista de dicionários
-        matched_product = {"produto": matched_data.iloc[0, 0]}  # Assumindo que você deseja apenas o primeiro resultado se houver mais de uma correspondência
-        return [matched_product]
+    # Verificar se foram encontrados produtos e retornar
+    if matched_products:
+        return matched_products
     else:
-        return [{"error": "Produto não encontrado no arquivo Excel."}]
-
-# Exemplo de uso:
-# request_data = {"produto": "Nome do Produto"}
-# result = match_products(dataframe, request_data)
-# print(result)
+        return [{"error": f"Nenhuma correspondência encontrada para '{product_name}' com a descrição '{user_description}' no arquivo Excel."}]
 
 if __name__ == '__main__':
     app.run(debug=True)
