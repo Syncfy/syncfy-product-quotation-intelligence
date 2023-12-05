@@ -1,0 +1,4 @@
+https://github.com/Syncfy/syncfy-product-quotation-intelligence
+
+Será necessário ter instaladas as bibliotecas Flask e Pandas de python para rodar o projeto e subir o servidor.
+Dentro do repositório tem um arquivo chamado requisição.txt com os dados necessários para fazer a requisição post para matching de produtos no arquivo de produtos que possui em torno de 1000 produtos para realizar a pesquisa e cotação futura.
