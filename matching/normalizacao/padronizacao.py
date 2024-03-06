@@ -1,12 +1,11 @@
-# Supondo que já realizamos a limpeza inicial
+import pandas as pd
 
-# Padronização adicional (exemplo: padronizar categorias)
-categorias_padrao = {
-    'eletronicos': 'Eletrônicos',
-    'notebooks': 'Computadores',
-    'wearables': 'Acessórios'
-}
+def padronizar_categorias(df):
+    categorias_padrao = {
+        'eletronicos': 'Eletrônicos',
+        'notebooks': 'Computadores',
+        'wearables': 'Acessórios'
+    }
+    df['categoria'] = df['categoria'].apply(lambda x: categorias_padrao.get(x, x))
+    return df
 
-df['categoria'] = df['categoria'].apply(lambda x: categorias_padrao.get(x, x))
-
-print(df)
