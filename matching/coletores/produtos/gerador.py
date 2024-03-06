@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def gerar_e_salvar_json_produtos():
+def gerarProdutos(quantidade):
     np.random.seed(42)  # Para reprodutibilidade
 
     # Nomes de produtos simulados
@@ -20,7 +20,7 @@ def gerar_e_salvar_json_produtos():
     categorias = ['Eletrônicos', 'Eletrodomésticos', 'Informática', 'Acessórios', 'Periféricos']
 
     # Gerando dados simulados
-    num_linhas = 100000  # Número de linhas desejado
+    num_linhas = int(quantidade) # Número de linhas desejado
     dados = {
         'id': np.arange(1, num_linhas + 1),
         'nome': np.random.choice(produtos_nomes, num_linhas),
@@ -30,16 +30,11 @@ def gerar_e_salvar_json_produtos():
 
     df = pd.DataFrame(dados)
 
-    # Convertendo o DataFrame para um JSON
-    json_data = df.to_json(orient='records')
-
     # Salvando o JSON em um arquivo
     json_file_path = './produtos_simulados.json'
     df.to_json(json_file_path, orient='records')
 
-    return json_file_path
-
-if __name__ == "__main__":
-    json_path = gerar_e_salvar_json_produtos()
-    print("Arquivo JSON salvo em:", json_path)
+    print("Arquivo JSON salvo em:", json_file_path)
+    return df
+    
 

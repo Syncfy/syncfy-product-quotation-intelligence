@@ -1,3 +1,6 @@
 {
-  "python.analysis.extraPaths": ["./matching/normalizacao"]
+  "python.analysis.extraPaths": [
+    "./matching/normalizacao",
+    "./matching/coletores/produtos"
+  ]
 }
