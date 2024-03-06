@@ -1,4 +1,3 @@
-import pandas as pd
 from matching.coletores.produtos.gerador import gerarProdutos
 from matching.normalizacao.limpeza import limpar_dados
 from matching.normalizacao.padronizacao import padronizar_categorias
@@ -10,9 +9,15 @@ def main():
     dados = gerarProdutos(100)
     try:
         dadosLimpos = limpar_dados(dados)
-        print("Dados após limpeza:" + dadosLimpos)
+        print("Dados após limpeza:")
+        print(dadosLimpos)
         
-        # df = padronizar_categorias(df)
+        print("---------------------------------")
+
+        dadosPadronizados = padronizar_categorias(dadosLimpos)
+        print("Dados após padronização:")
+        print(dadosPadronizados)
+        
         # df = remover_duplicatas(df)
         # print("Dados finais após normalização:")
         # print(df)

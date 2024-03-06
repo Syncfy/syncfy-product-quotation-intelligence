@@ -31,7 +31,7 @@ def gerarProdutos(quantidade):
     df = pd.DataFrame(dados)
 
     # Salvando o JSON em um arquivo
-    json_file_path = './produtos_simulados.json'
+    json_file_path = './matching/coletores/produtos/produtos_simulados.json'
     df.to_json(json_file_path, orient='records')
 
     print("Arquivo JSON salvo em:", json_file_path)

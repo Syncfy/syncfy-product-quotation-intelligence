@@ -28,8 +28,8 @@ def buscar_produtos_from_json(json_file_path, query):
 
 if __name__ == "__main__":
     # Exemplo de busca
-    json_file_path = 'produtos_simulados.json'
-    query = "smartphone"
+    json_file_path = 'coletores/produtos/produtos_simulados.json'
+    query = "iphone"
     resultados = buscar_produtos_from_json(json_file_path, query)
 
     # Exibindo os resultados
