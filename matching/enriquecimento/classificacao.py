@@ -15,3 +15,6 @@ def categorizador(data):
     
     y_pred = pipeline.predict(X_test)
     print(f"Acurácia: {accuracy_score(y_test, y_pred)}")
+    
+
+# Categorização ou Classificação dos produtos não será utilizada no momento, pois os produtos ja vem categorizados, caso seja necessário uma nova categorização passaremos a utilizar essa classe.

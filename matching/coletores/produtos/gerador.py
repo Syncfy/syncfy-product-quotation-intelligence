@@ -2,9 +2,8 @@ import pandas as pd
 import numpy as np
 
 def gerarProdutos(quantidade):
-    np.random.seed(42)  # Para reprodutibilidade
+    np.random.seed(42)  
 
-    # Nomes de produtos simulados
     produtos_nomes = [
         'Smartphone XYZ 64GB', 'Notebook ABC 15\' Core i7', 'Smartwatch DEF Health Tracker',
         'Tablet GHI 10\' 128GB', 'Câmera JKL 20MP Zoom Óptico', 'Headphone MNO Bluetooth Noise Cancelling',
@@ -16,11 +15,9 @@ def gerarProdutos(quantidade):
         'Mixer 123 3 em 1 Inox', 'Ventilador 456 de Mesa Silencioso', 'Aquecedor 789 Cerâmico',
     ]
 
-    # Categorias simuladas
     categorias = ['Eletrônicos', 'Eletrodomésticos', 'Informática', 'Acessórios', 'Periféricos']
 
-    # Gerando dados simulados
-    num_linhas = int(quantidade) # Número de linhas desejado
+    num_linhas = int(quantidade)
     dados = {
         'id': np.arange(1, num_linhas + 1),
         'nome': np.random.choice(produtos_nomes, num_linhas),
@@ -30,7 +27,6 @@ def gerarProdutos(quantidade):
 
     df = pd.DataFrame(dados)
 
-    # Salvando o JSON em um arquivo
     json_file_path = './matching/coletores/produtos/produtos_simulados.json'
     df.to_json(json_file_path, orient='records')
 

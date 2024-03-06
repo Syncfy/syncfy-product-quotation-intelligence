@@ -2,7 +2,6 @@ import re
 import spacy
 
 def extrair_atributos(descricao):
-    # Expressões regulares para extrair marca, modelo e cor
     marca_regex = r"(Smartphone|Notebook|Blender|Tênis)"
     modelo_regex = r"Modelo (\d+)"
     cor_regex = r"Cor (\w+)"
@@ -11,13 +10,10 @@ def extrair_atributos(descricao):
     modelo = re.search(modelo_regex, descricao)
     cor = re.search(cor_regex, descricao)
     
-    # Carregando um modelo pré-treinado do spaCy
-    nlp = spacy.load("en_core_web_sm")  # Substitua por "pt_core_news_sm" para português
+    nlp = spacy.load("en_core_web_sm")  
     
-    # Processando a descrição do produto
     doc = nlp(descricao)
     
-    # Extraindo entidades
     for ent in doc.ents:
         print(f"{ent.text} ({ent.label_})")
     

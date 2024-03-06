@@ -11,8 +11,7 @@ Este projeto visa criar um sistema de matching de produtos que permite aos usuá
 
 ### 2. Normalização de Dados
 
-- **Limpeza de Dados:** Remoção de inconsistências, erros de digitação e informações irrelevantes.
-- **Padronização:** Conversão dos dados para um formato padronizado, garantindo consistência nos nomes de produtos, descrições e categorias.
+- **Limpeza e Padronização dos Dados:** Remoção de inconsistências, erros de digitação e informações irrelevantes. Conversão dos dados para um formato padronizado, garantindo consistência nos nomes de produtos, descrições e categorias.
 - **Desduplicação:** Implementação de algoritmos para identificar e remover duplicatas, assegurando a unicidade de cada produto na base de dados.
 
 ### 3. Enriquecimento de Dados
