@@ -1,4 +1,5 @@
-# Remoção de duplicatas
-df_deduplicado = df.drop_duplicates(subset=['nome', 'categoria', 'preço'])
+import pandas as pd
 
-print(df_deduplicado)
+def remover_duplicatas(df):
+    df_deduplicado = df.drop_duplicates(subset=['nome', 'categoria', 'preço'])
+    return df_deduplicado
