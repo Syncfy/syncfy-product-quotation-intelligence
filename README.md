@@ -1,5 +1,20 @@
 # Sistema de Matching de Produtos
 
+## Como rodar a Aplicação
+
+### 1.Baixar as dependencias nessesarias:
+
+    pip install flask
+    pip install scikit-learn
+
+### 2 Com o comando abaixo executar a aplicação e subir o servidor
+
+    python api.py
+
+### 3 Fazer o import da collection no Postam
+
+### 4 Por fim, executar a requisão de matching e visualizar o retorno
+
 Este projeto visa criar um sistema de matching de produtos que permite aos usuários buscar e encontrar produtos relevantes com base em suas queries de busca. Inspirado no funcionamento do Buscapé, o sistema abrange desde a coleta e normalização de dados até a implementação de algoritmos de busca inteligente e indexação de dados.
 
 ## Etapas do Projeto
@@ -45,20 +60,3 @@ O README inclui exemplos de código e explicações detalhadas para cada uma das
 ## Considerações Finais
 
 Este documento fornece um guia abrangente para a criação de um sistema de matching de produtos. Ao seguir estas etapas, desenvolvedores podem construir um sistema robusto e eficiente que melhora significativamente a experiência de busca dos usuários, aproximando-os dos produtos que desejam encontrar.
-
-
-## Como rodar a Aplicação
-### 1.Baixar as dependencias nessesarias:
-    pip install flask
-    pip install scikit-learn
-### 2 Com o comando abaixo executar a aplicação e subir o servidor
-    python api.py
-### 3 Fazer o import da collection no Postam  
-### 4 Executar a requisão de matching  
-     
-
-
-
-
-
-

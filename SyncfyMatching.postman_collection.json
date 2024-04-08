@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "93fed138-7ff7-40dc-9ad3-d60332a8da38",
+		"name": "SyncfyMatching",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29945995"
+	},
+	"item": [
+		{
+			"name": "Matching",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\": \"iphone 11\",\r\n    \"outrosParametros\": \"valoresNecessarios\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/matching",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"matching"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
