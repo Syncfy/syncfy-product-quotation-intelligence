@@ -45,3 +45,20 @@ O README inclui exemplos de código e explicações detalhadas para cada uma das
 ## Considerações Finais
 
 Este documento fornece um guia abrangente para a criação de um sistema de matching de produtos. Ao seguir estas etapas, desenvolvedores podem construir um sistema robusto e eficiente que melhora significativamente a experiência de busca dos usuários, aproximando-os dos produtos que desejam encontrar.
+
+
+## Como rodar a Aplicação
+### 1.Baixar as dependencias nessesarias:
+    pip install flask
+    pip install scikit-learn
+### 2 Com o comando abaixo executar a aplicação e subir o servidor
+    python api.py
+### 3 Fazer o import da collection no Postam  
+### 4 Executar a requisão de matching  
+     
+
+
+
+
+
+
