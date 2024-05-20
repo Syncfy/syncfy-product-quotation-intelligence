@@ -56,11 +56,3 @@ Este projeto visa criar um sistema de matching de produtos que permite aos usuá
 
 - **Testes:** Execução de testes para garantir a precisão e eficiência do sistema.
 - **Aprendizado Contínuo:** Uso de feedback e dados de uso para melhorar continuamente os algoritmos de matching e busca.
-
-## Implementação
-
-O README inclui exemplos de código e explicações detalhadas para cada uma das etapas acima, orientando o usuário desde a configuração inicial do ambiente de desenvolvimento até a implementação final e os testes do sistema de matching de produtos.
-
-## Considerações Finais
-
-Este documento fornece um guia abrangente para a criação de um sistema de matching de produtos. Ao seguir estas etapas, desenvolvedores podem construir um sistema robusto e eficiente que melhora significativamente a experiência de busca dos usuários, aproximando-os dos produtos que desejam encontrar.

@@ -24,7 +24,7 @@ def buscar_produtos_por_query(produtos, query):
     
     resultados = []
     for i, score in enumerate(similaridade):
-        if score > 0:
+        if score > 0.5:
             produto = produtos[i]
             produto['Score'] = score
             resultados.append(produto)
